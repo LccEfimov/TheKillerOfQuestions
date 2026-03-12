@@ -1,19 +1,28 @@
-# TheKillerOfQuestions / Lab Analytics Module
+# TheKillerOfQuestions Monorepo
 
-This repository now includes a production-oriented monorepo module at `lab-analytics/` with:
-- `frontend-spa` (React + TypeScript + Vite)
-- `brain-service` (Node.js + Express analytical API)
-- `native-guard` (C++17 + CMake secure environment summary)
-- `docs`, `samples`, `scripts`
+Production-oriented analytics monorepo with `frontend-spa`, `brain-service`, and `native-guard`.
+
+## Architecture
+- Frontend SPA (React + TS + Vite): input, protected mode toggle, visualization panels.
+- Brain Service (Node + Express): explainable local analysis pipeline and secure export endpoint.
+- Native Guard (C++17 + CMake): safe capability summary, allowed-path checks, safe IO helpers.
 
 ## Quick start
-
 ```bash
-./lab-analytics/scripts/dev_all.sh
+bash scripts/bootstrap_repo.sh
+bash scripts/dev_all.sh
 ```
 
-## Test
-
+## Build and test
 ```bash
-./lab-analytics/scripts/test_all.sh
+bash scripts/build_all.sh
+bash scripts/test_all.sh
 ```
+
+## Protected mode
+Uses AES-256-GCM + PBKDF2-SHA-256 container (`.lccsec.json`) and non-persistent backend export metadata path.
+
+## Monetization and roadmap
+Use-cases: decision-support analytics, B2B dashboards, protected report handling.
+Monetization: SaaS, freemium, premium secure export, API tiers, white-label and consulting.
+Roadmap: core hardening → polished UX → Telegram Web App → premium protected exports → multimodal → enterprise collaboration.

@@ -1,0 +1,16 @@
+import React from 'react';
+export const HeroPanel=({hero}:{hero:any})=><section><h1>{hero?.title??'Analytical Lab'}</h1><p>{hero?.summary}</p></section>;
+export const InputPanel=({text,setText}:{text:string;setText:(v:string)=>void})=><section><textarea value={text} onChange={e=>setText(e.target.value)} rows={6} /></section>;
+export const ModeSwitches=({protectedMode,toggle}:{protectedMode:boolean;toggle:()=>void})=><section><label><input type='checkbox' checked={protectedMode} onChange={toggle}/> Protected mode</label></section>;
+export const StatsGrid=({stats}:{stats:any[]})=><section>{stats?.map((s,i)=><div key={i}>{s.label}:{String(s.value)}</div>)}</section>;
+export const HypothesisChart=({scenarioBars}:{scenarioBars:any[]})=><section><h3>Hypothesis</h3>{scenarioBars?.map((s:any)=><div key={s.id}>{s.id}:{s.value.toFixed(3)}</div>)}</section>;
+export const RiskRadar=({riskRadar}:{riskRadar:any[]})=><section><h3>Risk</h3>{riskRadar?.map((r:any)=><div key={r.axis}>{r.axis}:{r.value.toFixed(2)}</div>)}</section>;
+export const EvidenceRegistry=({evidence}:{evidence:any[]})=><section><h3>Evidence</h3><ul>{evidence?.map((e:any,i:number)=><li key={i}>{e.text}</li>)}</ul></section>;
+export const PipelineView=({pipeline}:{pipeline:any[]})=><section><h3>Pipeline</h3>{pipeline?.join(' → ')}</section>;
+export const TimelineView=({timeline}:{timeline:any[]})=><section><h3>Timeline</h3>{timeline?.map((t:any,i:number)=><div key={i}>{t.step}</div>)}</section>;
+export const ComparisonTable=({comparison}:{comparison:any[]})=><section><h3>Comparison</h3>{comparison?.map((c:any)=><div key={c.metric}>{c.metric}:{c.baseline}</div>)}</section>;
+export const ConclusionPanel=({conclusion}:{conclusion:any})=><section><h3>Conclusion</h3><p>{conclusion?.summary}</p></section>;
+export const DiagnosticsPanel=({native}:{native:any})=><section><h3>Diagnostics</h3><pre>{JSON.stringify(native,null,2)}</pre></section>;
+export const ExportPanel=({onExport}:{onExport:()=>void})=><section><button onClick={onExport}>Export Secure</button></section>;
+export const ErrorBanner=({error}:{error?:string})=>error?<div role='alert'>{error}</div>:null;
+export const LoadingOverlay=({loading}:{loading:boolean})=>loading?<div>Loading...</div>:null;

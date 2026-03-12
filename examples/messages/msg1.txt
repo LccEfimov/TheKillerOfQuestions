@@ -1,0 +1,1 @@
+Same account behaved differently across two sessions and handoff looked unclear.

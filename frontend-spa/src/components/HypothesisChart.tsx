@@ -1,0 +1,1 @@
+export { HypothesisChart } from '../components';

@@ -1,0 +1,17 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
+export const HeroPanel = ({ hero }) => _jsxs("section", { children: [_jsx("h1", { children: hero?.title ?? 'Analytical Lab' }), _jsx("p", { children: hero?.summary })] });
+export const InputPanel = ({ text, setText }) => _jsx("section", { children: _jsx("textarea", { value: text, onChange: e => setText(e.target.value), rows: 6 }) });
+export const ModeSwitches = ({ protectedMode, toggle }) => _jsx("section", { children: _jsxs("label", { children: [_jsx("input", { type: 'checkbox', checked: protectedMode, onChange: toggle }), " Protected mode"] }) });
+export const StatsGrid = ({ stats }) => _jsx("section", { children: stats?.map((s, i) => _jsxs("div", { children: [s.label, ":", String(s.value)] }, i)) });
+export const HypothesisChart = ({ scenarioBars }) => _jsxs("section", { children: [_jsx("h3", { children: "Hypothesis" }), scenarioBars?.map((s) => _jsxs("div", { children: [s.id, ":", s.value.toFixed(3)] }, s.id))] });
+export const RiskRadar = ({ riskRadar }) => _jsxs("section", { children: [_jsx("h3", { children: "Risk" }), riskRadar?.map((r) => _jsxs("div", { children: [r.axis, ":", r.value.toFixed(2)] }, r.axis))] });
+export const EvidenceRegistry = ({ evidence }) => _jsxs("section", { children: [_jsx("h3", { children: "Evidence" }), _jsx("ul", { children: evidence?.map((e, i) => _jsx("li", { children: e.text }, i)) })] });
+export const PipelineView = ({ pipeline }) => _jsxs("section", { children: [_jsx("h3", { children: "Pipeline" }), pipeline?.join(' → ')] });
+export const TimelineView = ({ timeline }) => _jsxs("section", { children: [_jsx("h3", { children: "Timeline" }), timeline?.map((t, i) => _jsx("div", { children: t.step }, i))] });
+export const ComparisonTable = ({ comparison }) => _jsxs("section", { children: [_jsx("h3", { children: "Comparison" }), comparison?.map((c) => _jsxs("div", { children: [c.metric, ":", c.baseline] }, c.metric))] });
+export const ConclusionPanel = ({ conclusion }) => _jsxs("section", { children: [_jsx("h3", { children: "Conclusion" }), _jsx("p", { children: conclusion?.summary })] });
+export const DiagnosticsPanel = ({ native }) => _jsxs("section", { children: [_jsx("h3", { children: "Diagnostics" }), _jsx("pre", { children: JSON.stringify(native, null, 2) })] });
+export const ExportPanel = ({ onExport }) => _jsx("section", { children: _jsx("button", { onClick: onExport, children: "Export Secure" }) });
+export const ErrorBanner = ({ error }) => error ? _jsx("div", { role: 'alert', children: error }) : null;
+export const LoadingOverlay = ({ loading }) => loading ? _jsx("div", { children: "Loading..." }) : null;

@@ -1,0 +1,11 @@
+{
+  "name": "the-killer-of-questions",
+  "private": true,
+  "workspaces": ["frontend-spa", "brain-service"],
+  "scripts": {
+    "bootstrap": "bash scripts/bootstrap_repo.sh",
+    "build": "bash scripts/build_all.sh",
+    "test": "bash scripts/test_all.sh",
+    "dev": "bash scripts/dev_all.sh"
+  }
+}
