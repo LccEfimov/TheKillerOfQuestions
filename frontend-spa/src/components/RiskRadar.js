@@ -1,0 +1,1 @@
+export { RiskRadar } from '../components';

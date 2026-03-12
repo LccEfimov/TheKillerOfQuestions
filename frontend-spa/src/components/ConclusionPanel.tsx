@@ -1,0 +1,1 @@
+export { ConclusionPanel } from '../components';
